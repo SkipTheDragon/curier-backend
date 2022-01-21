@@ -57,7 +57,7 @@ public class PDFExporter<T> {
         font.setSize(18);
         font.setColor(Color.BLUE);
 
-        Paragraph p = new Paragraph("List of Users", font);
+        Paragraph p = new Paragraph("List", font);
         p.setAlignment(Paragraph.ALIGN_CENTER);
 
         document.add(p);

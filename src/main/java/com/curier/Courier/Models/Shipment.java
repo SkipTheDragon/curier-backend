@@ -1,6 +1,10 @@
 package com.curier.Courier.Models;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
+import java.sql.Date;
+import java.sql.Timestamp;
 
 @Entity
 public class Shipment {
@@ -8,6 +12,9 @@ public class Shipment {
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+
+    @CreationTimestamp
+    private Timestamp createdDate;
 
     @OneToOne
     private Warehouse toWarehouse;
@@ -115,5 +122,8 @@ public class Shipment {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+    public Timestamp getCreatedDate() {
+        return createdDate;
     }
 }
